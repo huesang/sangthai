@@ -31,7 +31,7 @@ import { FormSearchComponent } from './search/form-search/form-search.component'
 import { FormMenuComponent } from './form/form-menu/form-menu.component';
 import { EditUserComponent } from './form/edit-user/edit-user.component';
 import { SearchComponent } from './search/search.component';
-import { ServiceInstanceService } from './service-instance.service';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { ServiceInstanceService } from './service-instance.service';
     routing,
     BrowserAnimationsModule
   ],
-  providers: [ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards, ServiceInstanceService],
+  providers: [ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

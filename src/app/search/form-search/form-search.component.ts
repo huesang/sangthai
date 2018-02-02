@@ -1,6 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { SearchService } from "../search.service";
-import { ServiceInstanceService } from "../../service-instance.service";
 import { Router} from '@angular/router';
 import { product } from '../../product';
 declare var $:any;
@@ -15,7 +14,7 @@ export class FormSearchComponent implements OnInit {
   select=-1;
   key_search='';
   array_search:product[]=[];
-  constructor(public searchService:SearchService,private router:Router,private serviceInstance:ServiceInstanceService) { }
+  constructor(public searchService:SearchService,private router:Router) { }
 
   ngOnInit() {
     var self=this;    

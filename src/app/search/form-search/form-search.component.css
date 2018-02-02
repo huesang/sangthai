@@ -1,0 +1,55 @@
+/* Form search */
+form{
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 25px;
+	margin: 10px 0;
+	display: table;
+	position: relative;
+}
+form input{
+	width: 80%;
+	border:1px solid #ccc;
+	border-right: none;
+	line-height: inherit;
+	float: left;
+	padding: 5px;
+}
+form input:focus,form button:focus{
+	outline: none;
+}
+form button{
+	cursor: pointer;
+	line-height: inherit;
+	width: 20%;
+	padding: 5px;
+	float: left;
+}
+form >ul{
+	position: absolute;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-top: none;
+	top: 32px;
+	background: #fff;
+	/* max-height: 310px; */
+	z-index: 1;
+}
+form >ul >li:hover{
+	background: #f1f1f1;
+	cursor: pointer;
+}
+form >ul >li>a{
+	color: #777;
+	display: block;
+	padding: 5px 10px;
+}
+form >ul >li:first-child a{
+	padding-top: 10px;
+}
+form >ul >li:last-child a{
+	padding-bottom: 10px;
+}
+form >ul >li.is-active{
+	background: #f1f1f1;
+}

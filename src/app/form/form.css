@@ -1,0 +1,75 @@
+.bg--primary{
+    background: #dc8068;
+}
+h2{
+    font-size: 28px;
+    margin: 10px 0;
+}
+label{
+    font-size: 15px;
+}
+.error{
+    text-align: right
+}
+.page{
+	border-top: 85px solid rgba(54,46,41,1);
+	padding: 30px;
+}
+form{
+    width: 100%;
+    margin: 20px auto 0;
+}
+.form-group >input{
+    width: 100%;
+    padding: 5px 15px;
+    outline: none;
+}
+.form-group >input.ng-invalid{
+    border: 1px solid #999;
+}
+.form-group >input.ng-pristine{
+    border: 1px solid #eee;
+}
+
+
+/* .form-group> button:not([disable]){
+    background:#dc8068;
+} */
+.form-group> button:focus{
+    outline: none;
+}
+.form-group> button {
+    border: none;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid #dc8068;
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.form-group> button:not([disabled]){
+    opacity: 1;
+}
+.form-group> button:not([disabled]):hover{
+    color: #dc8068;
+    background: #fff;
+}
+.form-group .error{
+    color: #f00;
+}
+.text--default{
+    color: #333;
+}
+.hover{
+    cursor: pointer
+}
+.text--default.hover:hover{
+    color: #dc8068;
+}
+.text--primary{
+    color: #dc8068;
+}

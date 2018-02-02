@@ -1,0 +1,52 @@
+<div class="page">
+	<div class="container">
+		<div class="row">
+			<div class="breakcrumb">
+				<ul class="flex_center">
+					<li>
+						<a href="#">Trang chủ</a>
+					</li>
+					<li>
+						<a href="#">Cafe sáng tạo 8</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page__content">
+				<div class="row">
+					<div class="col-md-5">
+						<div class="slider-for">
+							<img src="../assets/images/p3.jpg">
+							<img src="../assets/images/p2.jpg">
+							<img src="../assets/images/p1.jpg">
+						</div>
+						<div class="slider-nav">
+							<img src="../assets/images/p3.jpg">
+							<img src="../assets/images/p2.jpg">
+							<img src="../assets/images/p1.jpg">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="product-detail product-item">
+							<h1 class="product-detail__name">{{productDetail.name}}</h1>
+							<div class="product-detail__description">
+								{{productDetail.detail}}
+							</div>
+							<p class="product-detail__price"><span>{{ultilService.formatNumber(productDetail.price)}}</span><sup>đ</sup></p>
+							<p>Số lượng</p>
+							<div class="product-detail__number">
+								<span (click)="sub()">-</span>
+								<span class="number" #quantity>{{num}}</span>
+								<span (click)="add()">+</span>
+							</div>
+							<button (click)="cartService.addToCart(productDetail,quantity.innerText)" class="add-to-cart">Thêm vào giỏ hàng</button>
+							<div class="fb-share-button" 
+								data-href="https://themes.bizweb.vn/" 
+								data-layout="button">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

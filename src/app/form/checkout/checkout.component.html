@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <form>
+        <div class="row">
+            <div class="col-md-8 form-information">
+                <img class="logo-cup" src="assets/images/logo-cup.png">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Thông tin người mua hàng</h4>
+                        <form action="">
+                            <input type="text" name="customer-name" placeholder="Họ tên">
+                            <input type="email" name="customer-email" placeholder="Email">
+                            <input type="text" name="customer-phone" placeholder="Điện thoại">
+                            <input type="text" name="customer-address" placeholder="Địa chỉ">  
+                            <select>
+                                <option>Chọn Tỉnh/TP</option>
+                                <option>TP Hồ Chí Minh</option>
+                                <option>Hà Nội</option>
+                                <option>Đà Nẵng</option>
+                            </select>    
+                            <select>
+                                <option>Chọn Quận/Huyện</option>
+                                <option>Bình Thạnh</option>
+                                <option>Bình Tân</option>
+                                <option>Bình Chánh</option>
+                            </select>
+                            <textarea rows="3" placeholder="Ghi chú"></textarea>
+                        </form>
+                    </div>
+                    <div class="col-md-6 information-more">
+                        <h4>Thông tin người nhận hàng</h4>
+                        <form action="">
+                            <input type="text" name="customer-name" placeholder="Họ tên">
+                            <input type="text" name="customer-phone" placeholder="Điện thoại">
+                            <input type="text" name="customer-address" placeholder="Địa chỉ">  
+                            <select>
+                                <option>Chọn Tỉnh/TP</option>
+                                <option>TP Hồ Chí Minh</option>
+                                <option>Hà Nội</option>
+                                <option>Đà Nẵng</option>
+                            </select>    
+                            <select>
+                                <option>Chọn Quận/Huyện</option>
+                                <option>Bình Thạnh</option>
+                                <option>Bình Tân</option>
+                                <option>Bình Chánh</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 cart-information">
+                <h5>Đơn hàng({{cartService.countCart()}} sản phẩm)</h5>
+                <div class="wrap-table">
+                    <table>
+                        <tr *ngFor="let item of cartService.cart">
+                            <td class="img">
+                                <div>
+                                    <img src="assets/images/p1.jpg">
+                                    <span class="quantity">{{item.quantity}}</span>
+                                </div>
+                            </td>
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price * item.quantity}} <sup>đ</sup></td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+                <div class="flex_between">
+                    <span>Tạm tính</span>
+                    <span>{{cartService.totalCart()}} <sup>đ</sup></span>
+                </div>
+                <div class="flex_between">
+                    <span>Phí vận chuyển</span>
+                    <div><span #ship>40000</span><sup>đ</sup></div>
+                </div>
+                <hr>
+                <div class="flex_between">
+                    <span>Tổng cộng</span>
+                    <span>{{ship.innerText*1 + cartService.totalCart()}}<sup>đ</sup></span>
+                </div>
+                <div class="flex_between cart-information__btn">
+                    <a class="text--secondary" href="cart.php">< Quay về giỏ hàng</a>
+                    <button class="btn--secondary">Đặt hàng</button>    
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

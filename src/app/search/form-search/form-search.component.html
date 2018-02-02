@@ -1,0 +1,11 @@
+<form #formSearch="ngForm" (ngSubmit)="submit(formSearch)" class="formSearch" autocomplete="off">
+  <input type="text" [(ngModel)]="key_search" name="key_search" (keyup)="search($event)" (keyup.ArrowDown)="down()" (keyup.ArrowUp)="up()">
+  <button class="btn--primary" *ngIf="page=='search'">Tìm kiếm</button>
+  <ul *ngIf="array_search.length >0">
+    <ng-container *ngFor="let item of array_search.slice(0,5); let i=index">
+      <li [class.is-active]="i==select">
+        <a routerLink="/product/{{item.id}}">{{item.name}}</a>
+      </li>
+    </ng-container>
+  </ul>
+</form>

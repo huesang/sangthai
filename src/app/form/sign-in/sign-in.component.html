@@ -1,0 +1,51 @@
+<div class="page">
+	<div class="container">
+    <!-- Hiện khi chưa đăng nhập -->
+		<div class="row page__content" [hidden]="!formService.show_form">
+        <h2 class="text-center col-md-12">ĐĂNG NHẬP</h2>
+				<form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+          <div class="col-md-4 offset-md-4 form-group">
+            <div class="row">
+                <label class="col-md-3" for="">Email</label>
+                <div class="col-md-9 error" [hidden]="email.valid || email.pristine">
+                    <span *ngIf="email.hasError('required')">Bạn chưa nhập email</span>
+                    <span *ngIf="email.hasError('pattern')">Email không hợp lệ</span>
+                    <span *ngIf="email.hasError('incorrect')">Tài khoản này chưa đăng ký</span>
+                </div>
+            </div>
+            <input type="text" #email="ngModel" [(ngModel)]="user.email" name="email" required="required" pattern="^[A-Za-z0-9-_#$%+*()/^]+@\w{3,6}.\w{3,3}(.\w{2,5})?$">
+          </div>
+          <div class="col-md-4 offset-md-4 form-group">
+              <div class="row">
+                  <label class="col-md-3" for="">Mật khẩu</label>
+                  <div class="col-md-9 error" [hidden]="password.valid || password.pristine"> 
+                    <span *ngIf="password.hasError('required')">Bạn chưa nhập mật khẩu</span>   
+                    <span *ngIf="password.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</span>
+                    <span *ngIf="password.hasError('incorrect')">Password sai</span>
+                  </div>
+              </div>
+            <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" required="required" [minlength]="6">
+          </div>
+          <div class="col-md-4 offset-md-4 form-group">
+          <button [disabled]="!signInForm.valid" class="bg--primary">ĐĂNG NHẬP</button>
+          </div>
+        </form>
+        <div class="col-md-12 text-center">
+          <p class="text--default hover" (click)="goback()">Trở về</p>
+        </div>
+    </div> 
+    <!-- Hiện khi đã đăng nhập -->
+    <div class="row page__content" [hidden]="formService.show_form">
+      <div class="col-md-12">
+          <h5>Chào, {{formService.user.full_name}}</h5>
+      </div>
+      <div class="col-md-12">
+        <h2>Đăng nhập thành công</h2>
+      </div>
+    </div>
+	</div>	
+</div>
+	
+
+
+ 

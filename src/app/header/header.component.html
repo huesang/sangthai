@@ -1,0 +1,94 @@
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div class="row flex_center">
+                <div class="col-md-9 header-top__left flex_center">
+                    <a class="logo-main" routerLink="/home"><img src="../assets/images/logo-main.png"></a>
+                    <ul>
+                        <li> 
+                            <a routerLinkActive="is-active" routerLink="/home">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="is-active" routerLink="/introduce">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a routerLinkActive="is-active" routerLink="/news">Tin tức</a>
+                        </li>
+                        <li>
+                            <!-- [routerLinkActiveOptions]="{exact: true}" them vao neu muon duong link chinh xac moi actve -->
+                            <a routerLinkActive="is-active" routerLink="/product">Cửa hàng</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Thực đơn cafe</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contact.php">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 header-top__right">
+                    <ul class="flex_center">
+                        <li>
+                            <a href="cart.php">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"><span id="cart_number">{{cartService.countCart()}}</span></i>
+                            </a>
+                            <div *ngIf="cartService.getCart().length>0 else elseBlock" class="show-cart" id="target_cart">
+                                <ul>
+                                    <li *ngFor="let cartItem of cartService.getCart()">
+                                        <img src="../assets/images/{{cartItem.product.thumbnail}}">
+                                        <div>
+                                            <h6>{{cartItem.product.name}}</h6>
+                                            <p><span>{{ultilService.formatNumber(cartItem.product.price)}}</span><sup>đ</sup></p>
+                                            <span>Số lượng: {{cartItem.quantity}}</span>
+                                        </div> 
+                                        <span (click)="cartService.deleteCartItem(cartItem.product.id)">Xóa</span> 
+                                    </li> 
+                                </ul>
+                                <p>Tổng tiền: <span>{{ultilService.formatNumber(cartService.totalCart())}}</span><sup>đ</sup></p>
+                                <div class="flex_between">
+                                    <a class="btn--primary" href="">GIỎ HÀNG</a>
+                                    <a class="btn--secondary" routerLink="/checkout">THANH TOÁN</a>  
+                                </div>
+                            </div>
+                            <ng-template #elseBlock><div class="show-cart">Không có sản phẩm trong giỏ hàng</div></ng-template>
+                            <div *ngIf="cartService.dialog !=null" class="dialog-box is-active" id="target">
+                                <img src="../assets/images/{{cartService.dialog.thumbnail}}">
+                                <div>
+                                    <p>SẢN PHẨM ĐÃ CHO VÀO GIỎ HÀNG</p>
+                                    <span>{{cartService.dialog.name}}</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" data-target="#mySearch" data-toggle="modal"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <div>
+                                <app-form-menu></app-form-menu>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-long-arrow-up" aria-hidden="true"></i>ĐẶT BÀN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> 
+<div id="mySearch" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="flex_between">
+        <h4>NHẬP TỪ KHÓA TÌM KIẾM</h4>
+        <div class="btn-close" data-dismiss="modal">X</div>    
+      </div>
+      <app-form-search [page]="'menu'"></app-form-search>
+    </div>
+  </div>
+</div>
+

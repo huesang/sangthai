@@ -1,0 +1,63 @@
+<div class="page">
+    <div class="container">
+      <!-- Hiện khi chưa đăng ký -->
+      <div class="row page__content" [hidden]="!formService.show_form">
+          <div class="col-md-12 text-center">
+              <h2>ĐĂNG Ký</h2>
+              <div>
+                Nếu bạn chưa có tài khoản hãy đăng ký dưới đây
+              </div>
+          </div>
+          <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+            <div class="col-md-4 offset-md-4 form-group">
+              <div class="row">
+                  <label class="col-md-3" for="">Họ tên</label>
+                  <div class="col-md-9 error" [hidden]="full_name.valid || full_name.pristine"> 
+                    <span *ngIf="full_name.hasError('required')">Bạn chưa nhập mật khẩu</span>   
+                  </div>
+              </div>
+              <input type="text" #full_name="ngModel" name="full_name" [(ngModel)]="user.full_name" required="required">
+            </div>
+            <div class="col-md-4 offset-md-4 form-group">
+              <div class="row">
+                  <label class="col-md-3" for="">Email</label>
+                  <div class="col-md-9 error" [hidden]="email.valid || email.pristine">
+                      <span *ngIf="email.hasError('required')">Bạn chưa nhập email</span>
+                      <span *ngIf="email.hasError('pattern')">Email không hợp lệ</span>
+                      <span *ngIf="email.hasError('isset_email')">Tài khoản này đã tồn tại</span>
+                  </div>
+              </div>
+              <input type="text" #email="ngModel" [(ngModel)]="user.email" name="email" required="required" pattern="^[A-Za-z0-9-_#$%+*()/^]+@\w{3,6}.\w{3,3}(.\w{2,5})?$">
+            </div>
+            <div class="col-md-4 offset-md-4 form-group">
+                <div class="row">
+                    <label class="col-md-3" for="">Mật khẩu</label>
+                    <div class="col-md-9 error" [hidden]="password.valid || password.pristine"> 
+                      <span *ngIf="password.hasError('required')">Bạn chưa nhập mật khẩu</span>   
+                      <span *ngIf="password.hasError('minlength')">Mật khẩu phải có ít nhất 6 ký tự</span>
+                    </div>
+                </div>
+              <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" required="required" [minlength]="6">
+            </div>
+            <div class="col-md-4 offset-md-4 form-group">
+              <button [disabled]="!registerForm.valid" class="bg--primary">TẠO TÀI KHOẢN</button>
+            </div>
+          </form>
+          <div class="col-md-12 text-center">
+            <p class="text--default hover">Trở về</p>
+          </div>
+      </div>
+      <!-- Hiện khi đã đăng ký -->
+      <div class="row page__content" [hidden]="formService.show_form">
+        <div class="col-md-12"><h5>Chào, {{formService.user.full_name}}</h5></div>
+        <div class="col-md-12"><h2>Chúc mừng bạn đã đăng ký thành công</h2>
+          <a class="text--primary hover" routerLink="/editUser">=> Cập nhật tài khoản của bạn</a>
+        </div>
+        
+      </div>
+    </div>	
+</div>
+    
+  
+  
+  

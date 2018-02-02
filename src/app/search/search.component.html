@@ -1,0 +1,33 @@
+<div class="page">
+	<div class="container">
+		<div class="row">
+			<div class="breakcrumb">
+				<ul class="flex_center">
+					<li>
+						<a href="#">Trang chủ</a>
+					</li>
+					<li>
+						<a href="#">Kết quả tìm kiếm</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page__content">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+							<!-- Thêm page để phân biệt load cho trang search component hay header component -->
+              <app-form-search [page]="'search'"></app-form-search>
+              <h5 class="text-center">Kết quả tìm kiếm với từ khóa: {{key_search}} </h5>
+          </div>
+        </div>	
+        <!--  List search -->
+        <ng-container *ngIf="array_search.length >0 else elseBlock">
+            <app-product-item [product_list]="array_search"></app-product-item>
+        </ng-container>
+        <ng-template #elseBlock>
+          <div>Không tìm thấy kết quả với từ khóa: {{key_search}}</div>
+        </ng-template>
+			</div>
+		</div>
+	</div>	
+</div>
+	

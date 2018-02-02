@@ -1,0 +1,229 @@
+    <!-- <div>
+    	<img src="../assets/images/slider-01.jpg">
+    </div> -->
+    <div id="slider">
+        <div class="item-img" *ngFor="let item of slider_data" [@slider]="item.state">
+          <img src="{{item.img}}" alt="">
+        </div>
+    </div>      
+    <!-- menu -->
+    <section class="menu">
+        <div class="container">
+            <div class="row">
+                <div class="logo center"><img src="../assets/images/coffees.svg"></div>
+            </div>
+            <div class="row section__title">
+                <div class="container animated" data-animate="fadeinup">
+                    <div class="heading center"><span>COFFE VÀ TÔI</span></div>
+                    <h2 class="center">Menu</h2>
+                </div>
+            </div>
+            <div class="table">
+                <div class="table__left">
+                    <img src="../assets/images/index_special_morning.png">
+                    <div>
+                        <h4>Thức uống đặc biệt</h4>
+                        <span>Cafe không phải là thú thanh thản như trà, càng không mạnh mẽ bạo liệt như rượu</span>
+                    </div>
+                </div>
+                <div class="table__right">
+                    <ul>
+                        <li>
+                            <a href="#">1/Cafe <span>sáng tạo 8</span></a>
+                            <span>Từ những hạt cà phê Arabica, Robusta, Excelsa. Có hương thơm đầm, thơm rất lâu với hậu vị đậm và êm. Là...</span>
+                            <div class="price">130.000 <sup>đ</sup></div>
+                        </li>
+                        <li>
+                            <a href="#">2/Cafe <span>sáng tạo 8</span></a>
+                            <span>Từ những hạt cà phê Arabica, Robusta, Excelsa. Có hương thơm đầm, thơm rất lâu với hậu vị đậm và êm. Là một...</span>
+                            <div class="price">130.000 <sup>đ</sup></div>
+                        </li>
+                        <li>
+                            <a href="#">3/Cafe <span>LEGEND</span></a>
+                            <span>LEGEND là cà phê chồn được sản xuất bằng phương pháp "Lên men sinh học", sản phẩm chỉ có duy nhất ở Trung Nguyên....</span>
+                            <div class="price">130.000 <sup>đ</sup></div>
+                        </li>
+                        <li>
+                            <a href="#">4/Hộp quà <span>LEGEND</span></a>
+                            <span>Trong mỗi hộp quà LEGEND gồm có: - Cà phê Legend 225 gram - Phin cà phê mang hình các danh nhân nổi..</span>
+                            <div class="price">130.000 <sup>đ</sup></div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="bg_ship">
+                <img src="../assets/images/takeaway.png">
+                <div>
+                    <h4>Gọi điện giao hàng tận nơi</h4>
+                    <i class="fa fa-volume-control-phone"></i> 090 777 8678
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="introduce">
+        <div class="left animated" data-animate="show" data-delay="0" data-offset="200">
+            <img class="cup" src="../assets/images/pour-cup.png">
+            <div class="pour">
+                <img src="../assets/images/milk-pour2.png">    
+            </div>
+            <img class="drop" src="../assets/images/milk-drops.png">
+        </div>
+        <div class="right">
+            <h4>"COFFEE AND YOU"</h4>
+            <h4>CỬA HÀNG CÀ PHÊ PREMIUM</h4>
+            <div>Cà phê không phải là thú thanh thản như trà, càng không mạnh mẽ bạo liệt như rượu. Người thưởng thức nhẹ nhàng cho rằng cà phê là gạch nối giữa niềm vui và nỗi buồn. Với ai đang muộn phiền, cà phê càng day dứt như một bản nhạc có nhiều dấu lặng. Còn những kẻ môn đồ của giáo phái cà phê thì cho đó là người đàn bà mang bùa ngải trong mình...</div>
+            <a href="">Tìm hiểu thêm</a>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="logo center"><img src="../assets/images/coffees.svg"></div>
+            </div>
+            <div class="row section__title">
+                <div class="container animated" data-animate="fadeinup">
+                    <div class="heading center"><span>CỬA HÀNG</span></div>
+                    <h2 class="center">Cafe</h2>
+                </div> 
+            </div>
+            <app-product-item [product_list]="product_list"></app-product-item>
+        </div>
+    </section>
+    <!-- mã vạch -->
+    <section class="qr">
+        <div class="container flex_between flex_center">
+            <div class="qr-text flex_center">
+                <img src="../assets/images/percent-off.png">
+                <div>
+                    <p>Trên tất cả các hương vị</p>
+                    <h4>CHỈ THỨ SÁU</h4>
+                    <p>Coupon chỉ có giá trị vào ngày thứ Sáu từ 1/11 - 30/12/2016</p>
+                </div>    
+            </div>
+            <div class="qr-code">
+                <div>
+                    <img src="../assets/images/qr-code.jpg">
+                    <p>COFFEE AND YOU</p>
+                </div>
+            </div>    
+        </div>
+    </section>
+    <!-- order -->
+    <section class="order">
+        <div class="container">
+            <div class="row">
+                <div class="logo center"><img src="../assets/images/coffees.svg"></div>
+            </div>
+            <div class="row section__title">
+                <div class="container animated" data-animate="fadeinup">
+                    <div class="heading center"><span>ĐẶT BÀN</span></div>
+                    <h2 class="center">TRỰC TUYẾN</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 order_content flex_center animated" data-animate="fadeinup" data-delay="1">
+                    <img src="../assets/images/book-table-img.jpg">
+                    <div>
+                        <h4>Điền thông tin đặt bàn</h4>
+                        <form>
+                            <div class="person">
+                                <label for="person">Số người</label>
+                                <div>
+                                    <span>Chọn</span>
+                                    <ul>
+                                        <li>
+                                            2 người
+                                        </li>
+                                        <li>
+                                            3 người
+                                        </li>
+                                        <li>
+                                            10 người
+                                        </li>
+                                    </ul>
+                                </div>
+                                <input type="text" name="" id="person">    
+                            </div>
+                            <div class="date">
+                                <label>Ngày đặt</label>
+                                <div><input type="text" placeholder="Chọn ngày" value="" class="form_datetime"></div>
+                            </div>               
+                            <div class="customer flex_center flex_between">
+                                <div>
+                                    <label>Họ tên</label>
+                                    <input type="text" name="" placeholder="Họ tên khách hàng">
+                                </div>
+                                <div>
+                                    <label>Số điện thoại</label>
+                                    <input type="number" name="" placeholder="Số điện thoại">
+                                </div>
+                            </div>   
+                            <div>
+                                <label>Ghi chú</label>
+                                <textarea rows="4" placeholder="Ghi chú của khách hàng"></textarea>
+                            </div>          
+                            <button>Đặt bàn</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cmt">
+        <div class="container">
+            <div class="row">
+                <div class="logo center"><img src="../assets/images/coffees.svg"></div>
+            </div>
+            <div class="row section__title">
+                <div class="container animated" data-animate="fadeinup">
+                    <div class="heading center"><span>CẢM NHẬN</span></div>
+                    <h2 class="center">KHÁCH HÀNG</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div id="cmt-items">
+                    <div class="cmt-items">
+                        <img src="../assets/images/member1.jpg">
+                        <div>
+                            <h3>Nguyễn Thảo Mai</h3>
+                            <p>Phục vụ ly cà phê Truyền Thống và Mang Đi hoàn hảo, mọi lúc mọi nơi, chúng tôi là dân văn phòng, đã quen và nghiện ly cà phê của Coffee And You. Xin cảm ơn cho trải nghiệm cà phê lạ, độc đáo này</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="logo center"><img src="../assets/images/coffees.svg"></div>
+            </div>
+            <div class="row section__title">
+                <div class="container animated" data-animate="fadeinup">
+                    <div class="heading center"><span>LIÊN HỆ</span></div>
+                    <h2 class="center">CỬA HÀNG</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 address">
+                    <h1><img src="../assets/images/contact-img.png">COFFE VÀ BẠN</h1>
+                    <p>70 LỮ GIA</p>
+                    <span>PHƯỜNG 1, QUẬN 11, TPHCM</span>
+                </div>
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5194898815907!2d106.6559000143504!3d10.7714671923249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec18e8d2c03%3A0x67495af602943e42!2zxJBoIELDoWNoIEtob2EgVHAgSGNt!5e0!3m2!1sen!2sin!4v1506691968420" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+

@@ -1,0 +1,16 @@
+<div class="row">
+	<div *ngFor="let product of product_list" class="col-md-3 section__product">
+		<div class="section__product__img">
+		<img src="../assets/images/{{product.thumbnail}}">
+		</div>
+		<div class="section__product__detail">
+			<div class="price">{{ultilService.formatNumber(product.price)}}<sup>đ</sup></div>
+			<h4>{{product.name}}</h4>
+			<span>1 gói 250 gram</span>
+			<div>
+				<a (click)="cartService.addToCart(product,1)">Mua ngay</a>
+				<a routerLink="/product/{{product.id}}">Chi tiết</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -13,6 +13,7 @@ import { SignInComponent } from "./form/sign-in/sign-in.component";
 import { EditUserComponent } from "./form/edit-user/edit-user.component";
 import { SearchComponent } from "./search/search.component";
 import { ActivationGuards } from "./ActivationGuards";
+import { CartComponent } from "./cart/cart.component";
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'signIn', component: SignInComponent },
   { path: 'editUser', component: EditUserComponent},
   { path: 'introduce', component: IntroduceComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'search', component: SearchComponent },
   { path: 'news/:id', component: NewsComponent },
   ...ChildRecordRoutes

@@ -1,0 +1,44 @@
+<div class="page">
+	<div class="container">
+		<div class="row">
+			<div class="breakcrumb">
+				<ul class="flex_center">
+					<li>
+						<a href="#">Trang chủ</a>
+					</li>
+					<li>
+						<a href="#">Giỏ hàng</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page__content page__cart">
+        <div *ngIf="cartService.countCart()>0;else elseBlock ">
+          <table>
+            <tr>
+              <th colspan="2">Thông tin sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+            </tr>
+            <tr *ngFor="let item of cartService.cart">
+              <td><img src="assets/images/p1.jpg"></td>
+              <td class="text-left">
+                <h6>{{item.product.name}}</h6>
+                <p class="hover" (click)="cartService.deleteCartItem(item.product.id)">Xóa</p>	
+              </td>
+              <td>{{item.product.price}} <sup>đ</sup></td>
+              <td><input type="number" #quantity="ngModel" name="quantity" [(ngModel)]="item.quantity" min="1" (change)="cartService.changeNumberCart(item.product.id,quantity.value)"></td>
+              <td>{{item.product.price*item.quantity}} <sup>đ</sup></td>
+            </tr>
+          </table>
+          <p class="cart-total text-right">Tổng cộng: <span>{{cartService.totalCart()}}</span><sup>đ</sup></p>
+          <a class="btn--primary" routerLink="/checkout"><i class="fa fa-money"></i> THANH TOÁN</a>
+        </div>
+      </div>
+      <ng-template #elseBlock>
+        <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
+        <a class="hover text--primary" routerLink="/product">Tiếp tục mua sắm</a>
+      </ng-template>
+		</div>
+	</div>	
+</div>

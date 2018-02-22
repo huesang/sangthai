@@ -31,6 +31,7 @@ import { FormSearchComponent } from './search/form-search/form-search.component'
 import { FormMenuComponent } from './form/form-menu/form-menu.component';
 import { EditUserComponent } from './form/edit-user/edit-user.component';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { SearchComponent } from './search/search.component';
     FormSearchComponent,
     FormMenuComponent,
     EditUserComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     AlertModule.forRoot(),

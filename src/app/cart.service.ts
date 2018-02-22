@@ -35,7 +35,16 @@ export class CartService{
         });
       }
     }, 1000);
-  }
+	}
+	changeNumberCart(id:number,quantity:number){
+		let cart=this.getCart();
+  	let index=this.checkProduct(id);
+  	if(index!==-1){
+			cart[index].quantity=quantity;
+			this.cart=cart;
+  	}
+  	this.saveCart();
+	}
   saveCart(){
   	sessionStorage.cart=JSON.stringify(this.cart);
   }
@@ -79,7 +88,6 @@ export class CartService{
   	return count;
   }
   deleteCartItem(id){
-    console.log('delete');
   	let cart=this.getCart();
   	let index=this.checkProduct(id);
   	if(index!==-1){
@@ -87,6 +95,5 @@ export class CartService{
       this.cart=cart;
   	}
   	this.saveCart();
-    console.log('delete'+ id);
   }
 }

@@ -65,7 +65,7 @@ import { CartComponent } from './cart/cart.component';
     routing,
     BrowserAnimationsModule
   ],
-  providers: [ ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards],
+  providers: [{provide: APP_BASE_HREF, useValue: '/my/app'},ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards],
   bootstrap: [AppComponent]
 })
 // { provide: LocationStrategy, useClass: HashLocationStrategy },

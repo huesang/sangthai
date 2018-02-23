@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { AlertModule } from 'ngx-bootstrap';
 import { APP_BASE_HREF } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
+
+//main component
 import { AppComponent } from './app.component';
 import { routing } from './app-routing';
 import { HeaderComponent } from './header/header.component';
@@ -62,7 +65,7 @@ import { CartComponent } from './cart/cart.component';
     routing,
     BrowserAnimationsModule
   ],
-  providers: [ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards],
+  providers: [ { provide: LocationStrategy, useClass: HashLocationStrategy },ProductsService,UltilService,CartService,FormService,SearchService,GetHttpService,ActivationGuards],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

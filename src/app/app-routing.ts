@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'news/:id', component: NewsComponent },
   ...ChildRecordRoutes
 ];
-export const routing= RouterModule.forRoot(routes);
+export const routing= RouterModule.forRoot(routes,{ useHash: true });
 // @NgModule({
 //   exports: [ RouterModule ],
 //   imports: [ RouterModule.forRoot(routes) ],
